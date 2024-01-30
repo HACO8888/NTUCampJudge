@@ -1,9 +1,9 @@
-nums = input()
-peoples = input().split()
-big = 0
+from functools import cmp_to_key
 
-for people in peoples:
-  if int(people) > big:
-    big = int(people)
+input()
+students = input()
 
-print(big)
+students = students.split(" ")
+students.sort(key=cmp_to_key(lambda a, b: int(a) - int(b)))
+
+print(students[-1])
