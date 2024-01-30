@@ -1,12 +1,3 @@
-def is_palindrome(word):
-    length = len(word)
-    for i in range(length // 2):
-        if word[i] != word[length - i - 1]:
-            return False
-    return True
+inputString = input()
 
-word = input("")
-if is_palindrome(word):
-    print("yes")
-else:
-    print("no")
+print(("no", "yes")[inputString == inputString[::-1]])
