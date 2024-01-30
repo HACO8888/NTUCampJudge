@@ -1,16 +1,13 @@
-words = []
-ans = []
+from sys import stdin
 
-try:
-    while True:
-        a = input("")
-        if (a in words):
-            ans.append("YES")
-        else:
-            words.append(a)
-            ans.append("NO")
-except EOFError:
-    pass
+history = []
 
-for an in ans:
-    print(an)
+for line in stdin:
+    inputString = line
+
+    if inputString in history:
+        print("YES")
+    else:
+        print("NO")
+
+    history.append(inputString)
