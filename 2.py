@@ -1,27 +1,14 @@
-def draw_triangle(N):
-    if N == 0:
-        return ""
+usrInput = input()
 
-    triangle = []
-    for i in range(N):
-        line = "_" * (N - i - 1) + "+" * (i + 1)
-        triangle.append(line)
+while usrInput != "0":
+    userInputInt = int(usrInput)
 
-    return "\n".join(triangle)
+    for i in range(userInputInt):
+        row = [
+            *("_" for j in range(userInputInt - i - 1)),
+            *("+" for j in range(i + 1)),
+        ]
 
+        print("".join(row))
 
-input_numbers = []
-while True:
-    N = int(input(""))
-    if N == 0:
-        break
-
-    input_numbers.append(N)
-
-triangles = []
-for N in input_numbers:
-    triangle = draw_triangle(N)
-    triangles.append(triangle)
-
-output = "\n\n".join(triangles)
-print(output)
+    usrInput = input()
